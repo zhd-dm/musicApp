@@ -2,11 +2,7 @@
 
 // Define the `phonecatApp` module
 angular.module('musicApp', [
-  //'ngAnimate',
-  //'ngRoute',
-  //'core',
-  'uploadDetail',
+  'ngRoute',
+  'uploadMenu',
   'musicList',
-  //'song',
-  //'songList'
 ]);

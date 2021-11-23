@@ -1,7 +1,7 @@
 'use strict';
 
 // Define the `phoneDetail` module
-angular.module('musicList', [
+angular.module('musicApp', [
   'ngRoute',
-  //'core.user'
+  'ngMockE2E',
 ]);
