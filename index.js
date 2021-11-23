@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.listen(OPTIONS.port, () => {
     console.log('Server is running on http://localhost:' + OPTIONS.port);
-})
+});
 
 // // default options
 // app.use(fileUpload());

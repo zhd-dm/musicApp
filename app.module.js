@@ -5,8 +5,8 @@ angular.module('musicApp', [
   //'ngAnimate',
   //'ngRoute',
   //'core',
-  'userDetail',
-  //'userList',
+  'uploadDetail',
+  'musicList',
   //'song',
   //'songList'
 ]);

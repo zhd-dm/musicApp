@@ -6,8 +6,8 @@ angular.
     function config($routeProvider) {
       $routeProvider.
         when('/', {
-          template: '<user-detail></user-detail>',
-        })
+          template: '<upload-detail></upload-detail>',
+        });
         // .otherwise('/users');
     }
   ]);
