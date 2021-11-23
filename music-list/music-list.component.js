@@ -35,12 +35,15 @@ app
     ];
 
     $httpBackend.whenGET('http://localhost:1111/songs').respond(200, songs);
+    console.log(songs)
   });
 
 app.controller('musicListCtrl', function($http, $scope) {
-  $http.get('http://localhost:1111/#!/songs')
+  $http.get('http://localhost:1111/songs')
   .success(function(result) {
     console.log('success', result);
+    $scope.song = result;
+    console.log(song.name);
   })
   .error(function(result) {
     console.log('error');
