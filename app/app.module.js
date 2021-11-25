@@ -6,6 +6,5 @@ angular.module('musicApp', [
   'ngRoute',
   'core',
   'musicDetail',
-  'musicList',
-  'uploadMenu'
+  'musicList'
 ]);

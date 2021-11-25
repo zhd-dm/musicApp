@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('musicApp').
+  module('uploadMenu').
   component('uploadMenu', {
     templateUrl: 'upload-menu/upload-menu.template.html',
     controller: ['$scope', '$http',
