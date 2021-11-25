@@ -1,0 +1,121 @@
+
+  <a href="/"> Back </a>
+
+<div class="music-images">
+  <img ng-src="{{img}}" class="music"
+      ng-class="{selected: img === $ctrl.mainImageUrl}"
+      ng-repeat="img in $ctrl.music.images" />
+</div>
+
+<p>{{$ctrl.music.autor}}</p>
+<h1>{{$ctrl.music.title}}</h1>
+
+<p>{{$ctrl.music.lyrics}}</p>
+
+<!-- <ul class="music-thumbs">
+  <li ng-repeat="img in $ctrl.music.images">
+    <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" />
+  </li>
+</ul>
+
+<ul class="specs">
+  <li>
+    <span>Availability and Networks</span>
+    <dl>
+      <dt>Availability</dt>
+      <dd ng-repeat="availability in $ctrl.music.availability">{{availability}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Battery</span>
+    <dl>
+      <dt>Type</dt>
+      <dd>{{$ctrl.music.battery.type}}</dd>
+      <dt>Talk Time</dt>
+      <dd>{{$ctrl.music.battery.talkTime}}</dd>
+      <dt>Standby time (max)</dt>
+      <dd>{{$ctrl.music.battery.standbyTime}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Storage and Memory</span>
+    <dl>
+      <dt>RAM</dt>
+      <dd>{{$ctrl.music.storage.ram}}</dd>
+      <dt>Internal Storage</dt>
+      <dd>{{$ctrl.music.storage.flash}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Connectivity</span>
+    <dl>
+      <dt>Network Support</dt>
+      <dd>{{$ctrl.music.connectivity.cell}}</dd>
+      <dt>WiFi</dt>
+      <dd>{{$ctrl.music.connectivity.wifi}}</dd>
+      <dt>Bluetooth</dt>
+      <dd>{{$ctrl.music.connectivity.bluetooth}}</dd>
+      <dt>Infrared</dt>
+      <dd>{{$ctrl.music.connectivity.infrared | checkmark}}</dd>
+      <dt>GPS</dt>
+      <dd>{{$ctrl.music.connectivity.gps | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Android</span>
+    <dl>
+      <dt>OS Version</dt>
+      <dd>{{$ctrl.music.android.os}}</dd>
+      <dt>UI</dt>
+      <dd>{{$ctrl.music.android.ui}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Size and Weight</span>
+    <dl>
+      <dt>Dimensions</dt>
+      <dd ng-repeat="dim in $ctrl.music.sizeAndWeight.dimensions">{{dim}}</dd>
+      <dt>Weight</dt>
+      <dd>{{$ctrl.music.sizeAndWeight.weight}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Display</span>
+    <dl>
+      <dt>Screen size</dt>
+      <dd>{{$ctrl.music.display.screenSize}}</dd>
+      <dt>Screen resolution</dt>
+      <dd>{{$ctrl.music.display.screenResolution}}</dd>
+      <dt>Touch screen</dt>
+      <dd>{{$ctrl.music.display.touchScreen | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Hardware</span>
+    <dl>
+      <dt>CPU</dt>
+      <dd>{{$ctrl.music.hardware.cpu}}</dd>
+      <dt>USB</dt>
+      <dd>{{$ctrl.music.hardware.usb}}</dd>
+      <dt>Audio / headphone jack</dt>
+      <dd>{{$ctrl.music.hardware.audioJack}}</dd>
+      <dt>FM Radio</dt>
+      <dd>{{$ctrl.music.hardware.fmRadio | checkmark}}</dd>
+      <dt>Accelerometer</dt>
+      <dd>{{$ctrl.music.hardware.accelerometer | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Camera</span>
+    <dl>
+      <dt>Primary</dt>
+      <dd>{{$ctrl.music.camera.primary}}</dd>
+      <dt>Features</dt>
+      <dd>{{$ctrl.music.camera.features.join(', ')}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Additional Features</span>
+    <dd>{{$ctrl.music.additionalFeatures}}</dd>
+  </li>
+</ul> -->

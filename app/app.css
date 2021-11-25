@@ -1,0 +1,93 @@
+body {
+  padding: 20px;
+}
+
+h1 {
+  border-bottom: 1px solid gray;
+  margin-top: 0;
+}
+
+/* View: music list */
+.musics {
+  list-style: none;
+}
+
+.musics li {
+  clear: both;
+  height: 170px;
+  padding-top: 15px;
+}
+
+.thumb {
+  float: left;
+  height: 100px;
+  margin: 1rem;
+  /* padding: 1rem; */
+  width: 100px;
+}
+
+/* View: music detail */
+.music {
+  background-color: white;
+  display: none;
+  float: left;
+  height: 400px;
+  margin-bottom: 2em;
+  margin-right: 3em;
+  padding: 2em;
+  width: 400px;
+}
+
+.music:first-child {
+  display: block;
+}
+
+.music-images {
+  background-color: white;
+  float: left;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  width: 450px;
+}
+
+.music-thumbs {
+  list-style: none;
+  margin: 0;
+}
+
+.music-thumbs img {
+  height: 100px;
+  padding: 1em;
+  width: 100px;
+}
+
+.music-thumbs li {
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  display: inline-block;
+  margin: 1em;
+}
+
+.specs {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.specs dt {
+  font-weight: bold;
+}
+
+.specs > li {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+}
+
+.specs > li > span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
