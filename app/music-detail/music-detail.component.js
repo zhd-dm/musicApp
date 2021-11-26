@@ -5,7 +5,7 @@ angular.
   module('musicDetail').
   component('musicDetail', {
     templateUrl: 'music-detail/music-detail.template.html',
-    controller: ['$routeParams', 'Music',
+    controller: ['$routeParams', 'Music', 
       function MusicDetailController($routeParams, Music) {
         var self = this;
         self.music = Music.get({musicId: $routeParams.musicId}, function(music) {
