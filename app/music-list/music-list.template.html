@@ -19,6 +19,16 @@
 
     <div class="col-md-2">
       <login-menu></login-menu>
+      <upload-menu></upload-menu>
+    </div>
+
+    <div class="col-md-12">
+      <ul class="musics">
+        <li ng-repeat="track in $ctrl.tracks"
+        class="thumbnail music-list-item">
+          <img ng-src="{{track.src}}"/>
+        </li>
+      </ul>
     </div>
 
     <div class="col-md-6">

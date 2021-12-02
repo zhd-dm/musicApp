@@ -4,21 +4,35 @@ angular.
   module('uploadMenu').
   component('uploadMenu', {
     templateUrl: 'upload-menu/upload-menu.template.html',
-    controller: ['$scope', '$http',
-    function UploadDetailComponent($scope, $http) {
+    controller: ['$scope', '$http', 'Track',
+    function UploadDetailComponent($scope, $http, Track) {
       var self = this;
       $scope.upload = function() {
+        var track = {
+          id: '1',
+          name: 'name',
+          src: ''
+        };
         var fileInput = document.getElementById('file').files[0];
         var fileReader = new FileReader();
-        fileReader.readAsBinaryString(fileInput);
-        
-        fileReader.onloadstart = function(e) {
-          console.log("File uploading started", e);
-        };
+        if(fileInput != null) {
+          fileReader.readAsDataURL(fileInput);
+          
+          // start read
+          fileReader.onloadstart = function(e) {
+            console.log("File uploading started", e);
+          };
 
-        fileReader.onloadend = function(e) {
-          console.log("File successfuly uploaded", e.target);
-          $scope.recievedFile = e.target;
+          // end read
+          fileReader.onloadend = function(e) {
+            // TODO: set track name and id
+            track.src = e.target.result;
+            Track.saveTrack(track);
+            localStorage.setItem(track.name, JSON.stringify(track));        
+          };
+
+        } else {
+          console.log("Choose file!");
         };
       };
     }]

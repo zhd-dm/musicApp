@@ -5,8 +5,8 @@ angular.
   module('musicDetail').
   component('musicDetail', {
     templateUrl: 'music-detail/music-detail.template.html',
-    controller: ['$routeParams', 'Music', 
-      function MusicDetailController($routeParams, Music) {
+    controller: ['$routeParams', 'Music', '$scope', 
+      function MusicDetailController($routeParams, Music, $scope) {
         var self = this;
         self.music = Music.get({musicId: $routeParams.musicId}, function(music) {
           self.setImage(music.images[0]);
@@ -15,6 +15,8 @@ angular.
         self.setImage = function setImage(imageUrl) {
           self.mainImageUrl = imageUrl;
         };
+
+
       }
     ]
   });

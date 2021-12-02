@@ -5,9 +5,10 @@ angular.
   module('musicList').
   component('musicList', {
     templateUrl: 'music-list/music-list.template.html',
-    controller: ['Music', 'MusicUserService', '$scope',
-      function MusicListController(Music, MusicUserService, $scope) {
+    controller: ['Music', '$scope', 'Track',
+      function MusicListController(Music, $scope, Track) {
         this.musics = Music.query();
+        this.tracks = Track.getTracks();
         this.orderProp = 'age';
       }
     ]
