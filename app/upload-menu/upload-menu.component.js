@@ -28,7 +28,8 @@ angular.
             // TODO: set track name and id
             track.src = e.target.result;
             Track.saveTrack(track);
-            localStorage.setItem(track.name, JSON.stringify(track));        
+            localStorage.setItem(track.name, JSON.stringify([track]));   
+            // console.log(track)     
           };
 
         } else {

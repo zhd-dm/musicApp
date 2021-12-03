@@ -11,6 +11,7 @@ angular.
 
             function getTracks() {
                 var track = JSON.parse(localStorage.getItem('name'));
+                // console.log(src)
                 return track;
             }
 

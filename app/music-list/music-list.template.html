@@ -18,7 +18,7 @@
     </div>
 
     <div class="col-md-2">
-      <login-menu></login-menu>
+      <!-- <login-menu></login-menu> -->
       <upload-menu></upload-menu>
     </div>
 
@@ -26,7 +26,10 @@
       <ul class="musics">
         <li ng-repeat="track in $ctrl.tracks"
         class="thumbnail music-list-item">
-          <img ng-src="{{track.src}}"/>
+          <!-- <img ng-src="{{track.src}}"/> -->
+          <audio controls ng-src="{{track.src}}">
+            <!-- <source ng-src="{{track.src}}" type="audio/mpeg"> -->
+          </audio>
         </li>
       </ul>
     </div>
