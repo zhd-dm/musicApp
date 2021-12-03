@@ -2,7 +2,7 @@
 
 angular.
   module('musicApp').
-  config(['$routeProvider',
+  config(['$routeProvider', '$sceProvider',
     function config($routeProvider) {
       $routeProvider.
         when('/musics', {
@@ -13,4 +13,9 @@ angular.
         }).
         otherwise('/musics');
     }
-  ]);
+  ])
+  .config(function($sceProvider) {
+    // Completely disable SCE.  For demonstration purposes only!
+    // Do not use in new projects or libraries.
+    $sceProvider.enabled(false);
+  });
