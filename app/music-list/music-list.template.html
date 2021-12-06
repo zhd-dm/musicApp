@@ -25,10 +25,9 @@
     <div class="col-md-12">
       <ul class="musics">
         <li ng-repeat="track in $ctrl.tracks"
-        class="thumbnail music-list-item">
-          <!-- <img ng-src="{{track.src}}"/> -->
+        class="thumbnail music-list-item"> 
           <audio controls ng-src="{{track.src}}">
-            <!-- <source ng-src="{{track.src}}" type="audio/mpeg"> -->
+            <source ng-src="{{track.src}}" type="audio/mpeg"> 
           </audio>
         </li>
       </ul>
@@ -53,12 +52,33 @@
             <div class="col-md-5">
               <a href="#!/musics/{{music.id}}">{{music.name}}</a>
               <p>{{music.snippet}}</p>
+              <!-- <audio controls ng-src="{{track.src}}">
+                <source ng-src="{{track.src}}" type="audio/mpeg"> 
+              </audio> -->
             </div>
 
           </div>
 
         </li>
       </ul>
+
+      <!-- <tbody ng-repeat="music in $ctrl.musics | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+        <tr ng-repeat="track in $ctrl.tracks">
+            <td> 
+              <div class="col-md-2">
+                <a href="#!/musics/{{music.id}}" class="thumb">
+                  <img ng-src="{{music.imageUrl}}" alt="{{music.name}}" />
+                </a>
+              </div>
+            </td>
+            <td> 
+              <audio controls ng-src="{{track.src}}">
+                <source ng-src="{{track.src}}" type="audio/mpeg"> 
+              </audio>
+          </td>
+        </tr>
+      </tbody> -->
+
 
     </div>
   </div>

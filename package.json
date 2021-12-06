@@ -30,6 +30,7 @@
     "update-deps": "npm update",
     "postupdate-deps": "npm run copy-libs",
     "start": "http-server ./app -a localhost -p 8000 -c-1",
+    "starter": "starter.js",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "npm test -- --single-run",

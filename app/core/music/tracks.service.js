@@ -10,8 +10,11 @@ angular.
             var uploadedTracks = {};
 
             function getTracks() {
-                var track = JSON.parse(localStorage.getItem('name'));
-                // console.log(src)
+                var track = [
+                    JSON.parse(localStorage.getItem('name')),
+                    JSON.parse(localStorage.getItem('name2')),
+                    JSON.parse(localStorage.getItem('name3'))
+                ];
                 return track;
             }
 

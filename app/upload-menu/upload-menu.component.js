@@ -10,7 +10,7 @@ angular.
       $scope.upload = function() {
         var track = {
           id: '1',
-          name: 'name',
+          name: 'noName',
           src: ''
         };
         var fileInput = document.getElementById('file').files[0];
@@ -28,7 +28,7 @@ angular.
             // TODO: set track name and id
             track.src = e.target.result;
             Track.saveTrack(track);
-            localStorage.setItem(track.name, JSON.stringify([track]));   
+            localStorage.setItem(track.name, JSON.stringify(track));   
             // console.log(track)     
           };
 
