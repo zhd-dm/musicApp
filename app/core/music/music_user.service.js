@@ -7,15 +7,26 @@ angular.
         var self = this;
         self.User = {
             isloggedIn: false,
-            ssoToken: 'Beare 123456',
+            ssoToken: 'Beare 123456'
         }
 
         function logIn(params) {
-            console.log("hello")
+            var loginInput = document.getElementById('login').value;
+            var passwordInput = document.getElementById('password').value;
+            self.User.userData = {
+                login: loginInput,
+                password: passwordInput
+            }
+
+            if(self.User.userData === db.login) {
+                
+            }
+
+            return self.User; // -> DB 
         }
 
         function setUser() {
-
+            
         }
 
         function getUser() {

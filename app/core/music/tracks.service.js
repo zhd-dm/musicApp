@@ -1,4 +1,4 @@
-'use strict';
+'use strict';   
 
 angular.
     module('core.music').
@@ -7,15 +7,12 @@ angular.
             var options = {
                 type: 'mp3'
             };
-            var uploadedTracks = {};
 
+            // Как подождать ответ от сервера с выводом аудио в файле music-list.component.js
             function getTracks() {
-                var track = [
-                    JSON.parse(localStorage.getItem('name')),
-                    JSON.parse(localStorage.getItem('name2')),
-                    JSON.parse(localStorage.getItem('name3'))
-                ];
-                return track;
+                var track;
+                return $http
+                    .get("http://localhost:1111/api/tracks")
             }
 
             function getTrackById(id) {
@@ -23,10 +20,13 @@ angular.
             }
 
             function saveTrack(track) {
-                uploadedTracks[track.id] = {
-                    name: track.name,
-                    src: track.src
-                };
+                // uploadedTracks[track.id] = {
+                //     name: track.name,
+                //     src: track.src
+                // };
+                $http
+                    .post('http://localhost:1111/api/tracks', track)
+                    .then(() => console.log("Success"), () => console.log("Decline"));
             }
 
             return {

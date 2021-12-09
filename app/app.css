@@ -14,7 +14,7 @@ h1 {
 
 .musics li {
   clear: both;
-  height: 170px;
+  height: auto;
   padding-top: 15px;
 }
 

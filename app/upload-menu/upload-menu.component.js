@@ -9,9 +9,12 @@ angular.
       var self = this;
       $scope.upload = function() {
         var track = {
-          id: '1',
-          name: 'noName',
-          src: ''
+          name: "Demyan",
+          track: {
+            result: '',
+            name: '',
+            size: Number 
+          }
         };
         var fileInput = document.getElementById('file').files[0];
         var fileReader = new FileReader();
@@ -26,10 +29,10 @@ angular.
           // end read
           fileReader.onloadend = function(e) {
             // TODO: set track name and id
-            track.src = e.target.result;
-            Track.saveTrack(track);
-            localStorage.setItem(track.name, JSON.stringify(track));   
-            // console.log(track)     
+            track.track.result = e.target.result; 
+            track.track.name = track.name; 
+            track.track.size = e.total;
+            Track.saveTrack(track);   
           };
 
         } else {

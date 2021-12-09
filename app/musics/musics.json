@@ -2,6 +2,7 @@
     {
         "age": 0, 
         "id": "eminem-not-afraid", 
+        "src": "name",
         "imageUrl": "img/musics/eminem.0.jpg", 
         "autor": "Eminem",
         "name": "Not Afraid", 
@@ -11,6 +12,7 @@
     {
         "age": 1, 
         "id": "drake-find-your-love", 
+        "src": "name3",
         "imageUrl": "img/musics/drake.0.jpg", 
         "autor": "Drake",
         "name": "Find your love", 
@@ -20,6 +22,7 @@
     {
         "age": 2, 
         "id": "eminem-godzilla", 
+        "src": "name2",
         "imageUrl": "img/musics/eminem.0.jpg", 
         "autor": "Eminem",
         "name": "Godzilla", 

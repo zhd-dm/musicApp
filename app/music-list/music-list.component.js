@@ -8,8 +8,14 @@ angular.
     controller: ['Music', '$scope', 'Track',
       function MusicListController(Music, $scope, Track) {
         this.musics = Music.query();
-        this.tracks = Track.getTracks();
         this.orderProp = 'age';
+        _init();
+        function _init() {
+          Track.getTracks()
+          .then(function(response) {
+            $scope.tracks = response.data;
+          })
+        }
       }
     ]
   });
