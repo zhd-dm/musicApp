@@ -8,9 +8,7 @@ angular.
                 type: 'mp3'
             };
 
-            // Как подождать ответ от сервера с выводом аудио в файле music-list.component.js
-            function getTracks() {
-                var track;
+            function getTracks() {  
                 return $http
                     .get("http://localhost:1111/api/tracks")
             }
@@ -19,13 +17,13 @@ angular.
                 return uploadedTracks[id];
             }
 
-            function saveTrack(track) {
+            function saveTrack(uploadTrack) {
                 // uploadedTracks[track.id] = {
                 //     name: track.name,
                 //     src: track.src
                 // };
                 $http
-                    .post('http://localhost:1111/api/tracks', track)
+                    .post('http://localhost:1111/api/tracks', uploadTrack)
                     .then(() => console.log("Success"), () => console.log("Decline"));
             }
 

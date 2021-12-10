@@ -1,0 +1,98 @@
+[
+    {
+        track: {
+            type: Object,
+            name: {
+                type: String,
+                required: true
+            },
+            author: {
+                type: String        // track.author = user.name
+            },
+            size: {
+                type: Number
+            },
+            media: {
+                result: {
+                    type: String,
+                    required: true
+                },
+                image: {
+                    type: String
+                },
+                snippet: {
+                    type: String
+                },
+            },
+            dateRelease: {
+                type: Date,
+                default: Date.now
+            }
+        },
+        user: {
+            type: Object,
+            name: {
+                type: String,
+                required: true
+            },
+            login: {
+                type: String,
+                required: true
+            },
+            password: {
+                type: String,
+                required: true
+            },
+            avatar: {
+                type: String
+            },
+            dateRegistration: {
+                type: Date,
+                default: Date.now 
+            }
+        }
+
+        // "age": 2, 
+        // "id": "eminem-godzilla", 
+        // "src": "name2",
+        // "imageUrl": "img/musics/eminem.0.jpg", 
+        // "autor": "Eminem",
+        // "name": "Godzilla", 
+        // "snippet": "Monster\nYou get in my way, I'ma feed you to the monster (Yeah)\nI'm normal during the day, but at night, turn to a monster (Yeah)\nWhen the moon shines like Ice Road Truckers\nI look like a villain outta those blockbusters\nGodzilla, fire spitter, monster",
+        // "dateRelease": "01.2020"
+    },
+    {
+        // "size": "10MB",
+        // "autor": "Eminem",
+        // "title": "Not afraid",
+        // "length": "3min",
+        // "images": [
+        //     "img/musics/eminem-not-afraid.jpg"
+        // ],
+        // "tracks": "musics/tracks/eminem-not-afraid.mp3",
+        // "lyrics": "I'm not afraid (I'm not afraid)\nYeah\nTo take a stand (To take a stand)\nIt's been a ride\nEverybody (Everybody)\nI guess I had to\nCome take my hand (Come take my hand)\nGo to that place to get to this one"
+    }
+{
+    name: {
+        type: String,
+        required: true
+    },
+    track: {
+        type: Object,
+        result: {
+            type: String,
+            required: true
+        },
+        name: {
+            type: String
+        },
+        size: {
+            type: Number
+        }
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+}
+]

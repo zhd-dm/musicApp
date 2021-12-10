@@ -7,37 +7,48 @@ angular.
     controller: ['$scope', '$http', 'Track',
     function UploadDetailComponent($scope, $http, Track) {
       var self = this;
+
       $scope.upload = function() {
-        var track = {
-          name: "Demyan",
-          track: {
-            result: '',
-            name: '',
-            size: Number 
+        var uploadTrack = {
+          name: '',             // trackName
+          author: '',           // @login
+          size: Number,
+          media: {
+            result: '',         // trackResult
+            image: '',          // trackImage
+            snippet: ''         // trackSnippet
           }
         };
-        var fileInput = document.getElementById('file').files[0];
+
+        var trackResult = document.getElementById('file').files[0];
+        var trackName = document.getElementById('trackName').value;
+        var trackAuthor = '@login';
+        var trackSize;
+        var trackImage = '@defaultAvatar';
+        var trackSnippet = document.getElementById('trackSnippet').value; 
+
         var fileReader = new FileReader();
-        if(fileInput != null) {
-          fileReader.readAsDataURL(fileInput);
-          
+        if(trackResult != null && trackName != null) {
+          fileReader.readAsDataURL(trackResult);
           // start read
           fileReader.onloadstart = function(e) {
             console.log("File uploading started", e);
           };
-
           // end read
           fileReader.onloadend = function(e) {
             // TODO: set track name and id
-            track.track.result = e.target.result; 
-            track.track.name = track.name; 
-            track.track.size = e.total;
-            Track.saveTrack(track);   
+            uploadTrack.name = trackName;
+            uploadTrack.author = trackAuthor;
+            uploadTrack.size = trackSize = e.total;
+            uploadTrack.media.result = e.target.result;
+            uploadTrack.media.image = trackImage;
+            uploadTrack.media.snippet = trackSnippet;
+            Track.saveTrack(uploadTrack); 
           };
 
         } else {
           console.log("Choose file!");
-        };
+        };;
       };
     }]
   });

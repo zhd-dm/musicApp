@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const Item = require('../../models/Item');
+const Track = require('../../models/Track');
 
 // @route GET /api/tracks
 // @desc get all music tracks
 // @access get Public
 
 router.get('/', (req, res) => {
-    Item.find()
+    Track.find()
         .sort({ date: -1 })
-        .then(items => res.json(items))
+        .then(uploadTracks => res.json(uploadTracks))
 });
 
 // @route POST /api/tracks
@@ -18,12 +18,24 @@ router.get('/', (req, res) => {
 // @access get Public
 
 router.post('/', (req, res) => {
-    const newItem = new Item({
+    const newTrack = new Track({
         name: req.body.name,
-        track: req.body.track
+        author: req.body.author,
+        size: req.body.size,
+        media: req.body.media
     });
 
-    newItem.save().then(item => res.json(item));
+    newTrack.save().then(track => res.json(track));
 });
 
 module.exports = router;
+
+
+
+// name: { type: String, required: true },             // .name     = ??
+// author: { type: String },                           // .author   = user.name
+// size: { type: Number },                             // .size     = e.total
+// media: {
+//     result: { type: String, required: true },       // ..result  = e.target.result
+//     image: { type: String },                        // ..image   = ??
+//     snippet: { type: String },

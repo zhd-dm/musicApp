@@ -45,10 +45,10 @@ h1 {
 .music-images {
   background-color: white;
   float: left;
-  height: 450px;
+  height: 120px;
   overflow: hidden;
   position: relative;
-  width: 450px;
+  width: 150px;
 }
 
 .music-thumbs {
@@ -57,9 +57,9 @@ h1 {
 }
 
 .music-thumbs img {
-  height: 100px;
+  height: 120px;
   padding: 1em;
-  width: 100px;
+  width: 150px;
 }
 
 .music-thumbs li {

@@ -13,7 +13,7 @@ angular.
         function _init() {
           Track.getTracks()
           .then(function(response) {
-            $scope.tracks = response.data;
+            $scope.recievedTracks = response.data;
           })
         }
       }

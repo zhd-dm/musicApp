@@ -1,2 +1,12 @@
-<input type="file" name="file" id="file" />
-<button ng-click="upload()"> Upload </button>
+<form novalidate class="simple-form">
+    <label>Track name: <input id="trackName" type="text" ng-model="track.name" /></label><br />
+    <label>Track snippet: <input id="trackSnippet" type="text" ng-model="track.snippet" /></label><br />
+    <!-- <input type="submit" ng-click="update(user)" value="Save" /> -->
+    <input id="file" type="file" />
+    <button type="submit" class="btn btn-primary" ng-click="upload()"> Upload </button>
+    <input type="reset" class="btn btn-danger" value="Reset form" />
+</form>
+
+
+
+
