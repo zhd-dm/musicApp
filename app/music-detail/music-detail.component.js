@@ -5,18 +5,27 @@ angular.
   module('musicDetail').
   component('musicDetail', {
     templateUrl: 'music-detail/music-detail.template.html',
-    controller: ['$routeParams', 'Music', '$scope', 
-      function MusicDetailController($routeParams, Music, $scope) {
+    controller: ['$routeParams', 'Music', 'Track', '$scope', 
+      function MusicDetailController($routeParams, Music, Track, $scope) {
         var self = this;
-        self.music = Music.get({musicId: $routeParams.musicId}, function(music) {
-          self.setImage(music.images[0]);
-        });
+        
+        _init();
+        function _init() {
+          Track.getTrackById()
+            .then(function(response) {
+              $scope.recievedTrackById = response.data;
+            })
+        }
 
-        self.setImage = function setImage(imageUrl) {
-          self.mainImageUrl = imageUrl;
-        };
+        // self.music = Music.get({musicId: $routeParams.musicId}, function(music) {
+        //   self.setImage(music.images[0]);
+        // });
 
+        // self.setImage = function setImage(imageUrl) {
+        //   self.mainImageUrl = imageUrl;
+        // };
 
+        
       }
     ]
   });

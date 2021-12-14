@@ -3,18 +3,33 @@
 </div> -->
 
 
-<div class="col">
+<!-- <div class="col">
   <a href="/"> Back </a>
 
   <div class="music-images">
-    <img ng-src="{{img}}" class="music"
+    <img ng-src="{{track.media.image}}" class="music"
         ng-class="{selected: img === $ctrl.mainImageUrl}"
         ng-repeat="img in $ctrl.music.images" />
   </div>
 
-  <p>{{$ctrl.music.autor}}</p>
+  <p>{{$scope.track.author}}</p>
   <h1>{{$ctrl.music.title}}</h1>
 
   <p>{{$ctrl.music.lyrics}}</p>
  
-</div>
+</div> -->
+
+<li ng-repeat="track in recievedTrackById"
+    class="thumbnail music-list-item"> 
+            <a href="/"> Back </a>  
+            <img ng-src="{{track.media.image}}" alt="{{track.name}}" />
+            <audio controls>
+              <source ng-src="{{track.media.result}}" type="audio/mpeg"> 
+            </audio>
+
+            <p>{{track.author}}</p>
+            <h1>{{track.name}}</h1>
+          
+            <p>{{track.media.snippet}}</p>
+  <!-- <img src="{{track.media.result}}" alt=""> -->
+</li>

@@ -15,6 +15,11 @@ angular.
           .then(function(response) {
             $scope.recievedTracks = response.data;
           })
+        };
+
+        $scope.recieveId = function() {
+          var track = Track.getId();
+          console.log(track)
         }
       }
     ]

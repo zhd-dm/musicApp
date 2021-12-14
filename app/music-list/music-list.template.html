@@ -1,35 +1,48 @@
 <!-- <nav-bar></nav-bar> -->
 <div class="container-fluid">
-<!-- <div class="col-md-3">
-      <login-menu></login-menu>
-    </div> -->
+  <div class="row">
+    <div class="col-md-4">
+        <!-- <login-menu></login-menu> -->
+      </div>
 
-  <div class="col-md-3"> 
-    <upload-menu></upload-menu>
+    <div class="col-md-4"> 
+      <upload-menu></upload-menu>
+    </div>
+
+    <div class="col-md-4"> 
+      <registration-menu></registration-menu>
+    </div>
+
   </div>
 
-  <ul class="musics" ng-if="!$scope.tracks">
-    <li ng-repeat="track in recievedTracks"
-        class="thumbnail music-list-item"> 
-      <div class="row">
+  <div class="row">
 
-        <div class="col-md-3">
-          <a href="" class="thumb">
-            <img ng-src="{{track.media.image}}" alt="{{track.name}}" />
-          </a>
+    <ul class="musics" ng-if="!$scope.tracks">
+      <li ng-repeat="track in recievedTracks"
+          class="thumbnail music-list-item"> 
+        <div class="row">
+
+          <div class="col-md-3">
+            <a href="#!/musics/{{track._id}}" ng-init="trackId='id' + track._id" class="thumb">
+              <img ng-src="{{track.media.image}}" alt="{{track.name}}" />
+            </a>
+          </div>
+
+          <div class="col-md-5">
+            <a href="#!/musics/{{track._id}}">{{track.name}}</a>
+            <p>{{track.media.snippet}}</p>
+            <audio controls>
+              <source ng-src="{{track.media.result}}" type="audio/mpeg"> 
+            </audio>
+          </div>
+
+          <button class="btn btn-danger" ng-click="recieveId()"> Get ID </button>
+
         </div>
+      </li>
+    </ul>
 
-        <div class="col-md-5">
-          <a href="">{{track.name}}</a>
-          <p>{{track.media.snippet}}</p>
-          <audio controls>
-            <source ng-src="{{track.media.result}}" type="audio/mpeg"> 
-          </audio>
-        </div>
-
-      </div>
-    </li>
-  </ul>
+  </div>
 </div>
   
  <!-- <div class="row">

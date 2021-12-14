@@ -7,6 +7,7 @@ angular.module('musicApp', [
   'core',
   'navBar',
   'loginMenu',
+  'registrationMenu',
   'uploadMenu',
   'musicDetail',
   'musicList'

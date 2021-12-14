@@ -3,6 +3,7 @@ const router = express.Router();
 
 const Track = require('../../models/Track');
 
+///////////////////////////////// /api/tracks
 // @route GET /api/tracks
 // @desc get all music tracks
 // @access get Public
@@ -26,6 +27,19 @@ router.post('/', (req, res) => {
     });
 
     newTrack.save().then(track => res.json(track));
+});
+
+///////////////////////////////// /api/tracks/trackById
+// @route GET /api/tracks/trackById
+// @desc get current music track
+// @access get Public
+
+var trackId = '61b26fa9dcbc18f2d9111ea9';
+
+router.get(`/${trackId}`, (req, res) => {
+    Track.findById(trackId)
+        .then(trackById => res.json([trackById]))
+        //.then(trackById => res.json(trackById));
 });
 
 module.exports = router;

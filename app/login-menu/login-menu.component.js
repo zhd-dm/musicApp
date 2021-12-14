@@ -7,9 +7,9 @@ angular.
     controller: ['$scope', '$http', 'MusicUserService', 
       function MusicUserComponent($scope, $http, MusicUserService) {
         // console.log("from function hello")
-        $scope.logIn = function () {
+        $scope.logIn = function() {
           this.user = MusicUserService.logIn();
           console.log(this.user)
-        }
+        };
     }]
   });

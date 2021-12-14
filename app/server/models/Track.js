@@ -9,7 +9,7 @@ const TrackSchema = new Schema({
         size: { type: Number },                                     // .size     = e.total
         media: {
             result: { type: String, required: true },               // ..result  = e.target.result
-            image: { type: String, default: '123' },    // ..image   = ??
+            image: { type: String, default: '123' },                // ..image   = ??
             snippet: { type: String },                              // ..snippet = ??
         },
         dateRelease: { type: Date, default: Date.now }              // ....Date.now
