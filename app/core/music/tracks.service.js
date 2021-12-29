@@ -30,7 +30,7 @@ angular.
 
             function updateTrackData(updatedTrack, id) {
                 $http  
-                    .patch(`http://localhost:1111/api/tracks/edit/${id}`, updateTrackData)
+                    .patch(`http://localhost:1111/api/tracks/edit/${id}`, updatedTrack)
                     .then(() => console.log("Success"), () => console.log("Decline"));
             }
 

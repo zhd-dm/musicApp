@@ -54,7 +54,7 @@ angular.
             updatedTrack.media.image = e.target.result;
             updatedTrack.media.snippet = trackSnippet;
             console.log(updatedTrack);
-            //Track.updateTrackData(updatedTrack); 
+            Track.updateTrackData(updatedTrack); 
           }
         } else {
           console.log("Edit something");
