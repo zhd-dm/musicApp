@@ -5,8 +5,8 @@ angular.
   module('musicList').
   component('musicList', {
     templateUrl: 'music-list/music-list.template.html',
-    controller: ['Music', '$scope', 'Track',
-      function MusicListController(Music, $scope, Track) {
+    controller: ['Music', '$scope', 'Track', '$location',
+      function MusicListController(Music, $scope, Track, $location) {
         this.musics = Music.query();
         this.orderProp = 'age';
         _init();
@@ -14,13 +14,14 @@ angular.
           Track.getTracks()
           .then(function(response) {
             $scope.recievedTracks = response.data;
+            console.log($scope.recievedTracks)
           })
         };
 
-        $scope.recieveId = function() {
-          var track = Track.getId();
-          console.log(track)
-        }
+        // $scope.getTrackId = function(id) {
+        //   console.log(id);
+        //   $location.url(`/musics/${id}`)
+        // }
       }
     ]
   });

@@ -13,22 +13,9 @@ angular.
                     .get("http://localhost:1111/api/tracks");
             };
 
-            function getId() {
-                var a = document.getElementById('trackId');
-
-                return a;
-            };
-
-            function getTrackById(recievedTrackById) {
-                //return uploadedTracks[id];
-                var id = '';
-                var req = {
-                    method: 'GET',
-                    url: `http://localhost:1111/api/tracks/${id}`,
-                    params: {musicId: 'musics'},
-                   };
-
-                return $http(req, recievedTrackById);
+            function getTrackById(id) {
+                return $http
+                    .get(`http://localhost:1111/api/tracks/${id}`);
             };
 
             function saveTrack(uploadTrack) {
@@ -41,11 +28,17 @@ angular.
                     .then(() => console.log("Success"), () => console.log("Decline"));
             };
 
+            function updateTrackData(updatedTrack, id) {
+                $http  
+                    .patch(`http://localhost:1111/api/tracks/edit/${id}`, updateTrackData)
+                    .then(() => console.log("Success"), () => console.log("Decline"));
+            }
+
             return {
                 saveTrack: saveTrack,
                 getTracks: getTracks,
-                getId: getId,
-                getTrackById: getTrackById
+                getTrackById: getTrackById,
+                updateTrackData: updateTrackData
             };
         }
     ]);

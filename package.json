@@ -8,6 +8,7 @@
   "dependencies": {
     "angular": "1.8.x",
     "angular-animate": "1.8.x",
+    "angular-loading-bar": "^0.9.0",
     "angular-resource": "1.8.x",
     "angular-route": "1.8.x",
     "body-parser": "^1.19.0",
@@ -33,11 +34,11 @@
     "protractor": "^5.4.4"
   },
   "scripts": {
+    "111111": "nodemon /server/index.js ",
     "postinstall": "npm run copy-libs",
     "update-deps": "npm update",
     "postupdate-deps": "npm run copy-libs",
     "start": "http-server ./app -a localhost -p 8000 -c-1",
-    "111111": "nodemon /server/index.js ",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "npm test -- --single-run",

@@ -1,46 +1,19 @@
 const express = require('express');
+//const controller = require('../../controllers.....');
 const router = express.Router();
 
-const Track = require('../../models/Track');
+const controller = require('../../controllers/tracks');
 
 ///////////////////////////////// /api/tracks
 // @route GET /api/tracks
-// @desc get all music tracks
-// @access get Public
-
-router.get('/', (req, res) => {
-    Track.find()
-        .sort({ date: -1 })
-        .then(uploadTracks => res.json(uploadTracks))
-});
+router.get('/', controller.trackFind); 
 
 // @route POST /api/tracks
-// @desc add music tracks
-// @access get Public
-
-router.post('/', (req, res) => {
-    const newTrack = new Track({
-        name: req.body.name,
-        author: req.body.author,
-        size: req.body.size,
-        media: req.body.media
-    });
-
-    newTrack.save().then(track => res.json(track));
-});
+router.post('/', controller.trackUpload);
 
 ///////////////////////////////// /api/tracks/trackById
 // @route GET /api/tracks/trackById
-// @desc get current music track
-// @access get Public
-
-var trackId = '61b26fa9dcbc18f2d9111ea9';
-
-router.get(`/${trackId}`, (req, res) => {
-    Track.findById(trackId)
-        .then(trackById => res.json([trackById]))
-        //.then(trackById => res.json(trackById));
-});
+router.get('/:trackId', controller.trackById);
 
 module.exports = router;
 

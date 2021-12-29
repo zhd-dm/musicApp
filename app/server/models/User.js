@@ -20,6 +20,7 @@ const UserScema = new Schema({
         name: { type: String, required: true },             // .name     = form on registration
         login: { type: String, required: true },            // .login    = form on registration
         password: { type: String, required: true },         // .password = form on registration
+        access: { type: String, default: 'defaultUser' },   // .access   = Guest/Admin/defaultUser/currentUser
         avatar: { type: String },                           // .avatar   = form on edit page
         dateRegistration: { type: Date, default: Date.now } // ....Date.now
 }

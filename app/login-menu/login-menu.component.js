@@ -9,7 +9,6 @@ angular.
         // console.log("from function hello")
         $scope.logIn = function() {
           this.user = MusicUserService.logIn();
-          console.log(this.user)
         };
     }]
   });

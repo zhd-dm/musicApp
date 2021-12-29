@@ -1,34 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
+const controller = require('../../controllers/auth');
+
 const User = require('../../models/User');
 
-///////////////////////////////// /api/users
-// @route GET /api/users
-// @desc get current users
-// @access get Public
+///////////////////////////////// /api/auth
+// @route GET /api/auth/login
+router.get('/login', controller.userLogin);
 
-router.get('/', (req, res) => {
-    var login = 'zhddm';
-    User.find({ login: login }, 'name login avatar dateRegistration')
-        .then(currentUser => res.json(currentUser))
-        //Person.findOne({ 'name.last': 'Ghost' }, 'name occupation'
-});
-
-// @route POST /api/users
-// @desc add new user
-// @access get Public
-
-router.post('/', (req, res) => {
-    const newUser = new User({
-        name: req.body.name,
-        login: req.body.login,
-        password: req.body.password,
-        avatar: req.body.avatar
-    });
-
-    newUser.save().then(user => res.json(user));
-});
+// @route POST /api/auth/register
+router.post('/register', controller.userRegister);
 
 ///////////////////////////////// /api/tracks/trackById
 // @route GET /api/tracks/trackById

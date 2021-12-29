@@ -8,10 +8,10 @@ angular.
     controller: ['$routeParams', 'Music', 'Track', '$scope', 
       function MusicDetailController($routeParams, Music, Track, $scope) {
         var self = this;
-        
+        var trackId = $routeParams.trackId;
         _init();
         function _init() {
-          Track.getTrackById()
+          Track.getTrackById(trackId)
             .then(function(response) {
               $scope.recievedTrackById = response.data;
             })

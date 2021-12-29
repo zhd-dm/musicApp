@@ -6,9 +6,6 @@ const bodyParser = require('body-parser');
 ///////////////////////////////// Track
 // vars for upload track 
 const uploadTracks = require('./routes/api/tracks');
-// vars for recieving track id 
-const trackById = require('./routes/api/tracks');
-const trackId = require('./routes/api/tracks');
 
 ///////////////////////////////// User
 // vars for user
@@ -20,7 +17,7 @@ app.use(bodyParser.json( {limit: '50mb'} ));
 app.use(bodyParser.urlencoded( {limit: '50mb', extended: true} ));
 
 app.use(cors());
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 const db = require('./config/keys').mongoURI;
 
@@ -31,10 +28,10 @@ mongoose
 
 ///////////////////////////////// Track
 app.use('/api/tracks', uploadTracks);
-app.use(`/api/tracks/${trackId}`, trackById);
+// app.use('/api/tracks', trackId);
 
 ///////////////////////////////// User
-app.use('/api/users', currentUser);
+app.use('/api/auth', currentUser);
 
 const port = process.env.PORT || 1111;
 app.listen(port, () => console.log(`Server is running on ${port} port`));

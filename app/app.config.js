@@ -8,7 +8,7 @@ angular.
         when('/musics', {
           template: '<music-list></music-list>'
         }).
-        when('/musics/:musicId', {
+        when('/musics/:trackId', {
           template: '<music-detail customAttribute={{track._id}}></music-detail>'
         }).
         otherwise('/musics');

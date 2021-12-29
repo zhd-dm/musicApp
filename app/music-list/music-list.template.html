@@ -1,27 +1,53 @@
 <!-- <nav-bar></nav-bar> -->
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
-        <!-- <login-menu></login-menu> -->
-      </div>
 
-    <div class="col-md-4"> 
-      <upload-menu></upload-menu>
+    <div class="col-md-4">
+      <div class="loginMenu">
+        <login-menu></login-menu>
+      </div>
     </div>
 
-    <div class="col-md-4"> 
-      <registration-menu></registration-menu>
+    <div class="col-md-4">
+      <div class="loginMenu"> 
+        <upload-menu></upload-menu>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="loginMenu"> 
+        <registration-menu></registration-menu>
+      </div>
     </div>
 
   </div>
 
   <div class="row">
 
+    <div class="col-md-4">
+      <div class="loginMenu">
+        <!-- <edit-page></edit-page> -->
+      </div>
+    </div>
+    
+    <div class="col-md-4"> 
+      <!-- <upload-menu></upload-menu> -->
+    </div>
+
+    <div class="col-md-4"> 
+      <!-- <registration-menu></registration-menu> -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="spinner-border" role="status" ng-if="!$scope.tracks">
+      <span class="sr-only">Loading...</span>
+    </div>
     <ul class="musics" ng-if="!$scope.tracks">
       <li ng-repeat="track in recievedTracks"
           class="thumbnail music-list-item"> 
         <div class="row">
-
+  
           <div class="col-md-3">
             <a href="#!/musics/{{track._id}}" ng-init="trackId='id' + track._id" class="thumb">
               <img ng-src="{{track.media.image}}" alt="{{track.name}}" />
@@ -29,14 +55,12 @@
           </div>
 
           <div class="col-md-5">
-            <a href="#!/musics/{{track._id}}">{{track.name}}</a>
+            <a href="#!/musics/{{track.author}}">{{track.author}}</a> - <a ng-click="getTrackId(track._id)">{{track.name}}</a>
             <p>{{track.media.snippet}}</p>
             <audio controls>
               <source ng-src="{{track.media.result}}" type="audio/mpeg"> 
             </audio>
           </div>
-
-          <button class="btn btn-danger" ng-click="recieveId()"> Get ID </button>
 
         </div>
       </li>

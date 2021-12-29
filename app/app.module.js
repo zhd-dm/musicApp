@@ -10,5 +10,6 @@ angular.module('musicApp', [
   'registrationMenu',
   'uploadMenu',
   'musicDetail',
-  'musicList'
+  'musicList',
+  'editPage'
 ]);

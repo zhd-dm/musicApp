@@ -20,7 +20,7 @@ angular.
           }
         };
 
-        var trackResult = document.getElementById('file').files[0];
+        var trackResult = document.getElementById('trackResult').files[0];
         var trackName = document.getElementById('trackName').value;
         var trackAuthor = '@login';
         var trackSize;
