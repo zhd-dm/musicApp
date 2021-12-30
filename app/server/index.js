@@ -5,11 +5,11 @@ const bodyParser = require('body-parser');
 
 ///////////////////////////////// Track
 // vars for upload track 
-const uploadTracks = require('./routes/api/tracks');
+const Tracks = require('./routes/api/tracks');
 
 ///////////////////////////////// User
 // vars for user
-const currentUser = require('./routes/api/users');
+const Users = require('./routes/api/users');
 
 const app = express();
 
@@ -27,11 +27,11 @@ mongoose
     .catch((err) => console.log(err))
 
 ///////////////////////////////// Track
-app.use('/api/tracks', uploadTracks);
+app.use('/api/tracks', Tracks);
 // app.use('/api/tracks', trackId);
 
 ///////////////////////////////// User
-app.use('/api/auth', currentUser);
+app.use('/api/auth', Users);
 
 const port = process.env.PORT || 1111;
 app.listen(port, () => console.log(`Server is running on ${port} port`));

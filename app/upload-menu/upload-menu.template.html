@@ -1,12 +1,22 @@
-<form action="">
-    <input id="trackName" type="text" placeholder="Track name"/>
-    <input id="trackSnippet" type="text" placeholder="Track snippet"/>
-    <!-- <input type="submit" ng-click="update(user)" value="Save" /> -->
-    <input id="trackResult" type="file" />
-    <button type="submit" class="btn btn-primary" ng-click="upload()"> Upload </button>
-    <input type="reset" class="btn btn-danger" value="Reset form" />
-</form>
-
-
-
+<h1>Upload your track</h1>
+<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label>Track Name</label>
+            <input type="text" id="trackName" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Track Snippet</label>
+            <input type="text" id="trackSnippet" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Audio Track</label>
+            <input type="file" id="trackResult" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success" ng-click="upload()"> Upload </button>
+            <input type="reset" class="btn btn-danger" value="Reset form" />
+        </div>
+    </form>
+</div>
 

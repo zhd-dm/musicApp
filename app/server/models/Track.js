@@ -6,6 +6,7 @@ const TrackSchema = new Schema({
         type: Object,
         name: { type: String, required: true },                     // .name     = ??
         author: { type: String },                                   // .author   = user.name
+        // authorId: { type: String },
         size: { type: Number },                                     // .size     = e.total
         access: {
             admin:       { type: Boolean, default: true },
@@ -20,16 +21,4 @@ const TrackSchema = new Schema({
         dateRelease: { type: Date, default: Date.now }              // ....Date.now
     }
 ); 
-
-// const UserSchema = new Schema({
-//     user: { 
-//         type: Object, 
-//         name: { type: String, required: true },             // .name     = form on registration
-//         login: { type: String, required: true },            // .login    = form on registration
-//         password: { type: String, required: true },         // .password = form on registration
-//         avatar: { type: String },                           // .avatar   = form on edit page
-//         dateRegistration: { type: Date, default: Date.now } // ....Date.now
-//     }
-// });
-
 module.exports = Track = mongoose.model('track', TrackSchema); 

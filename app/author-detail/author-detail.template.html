@@ -1,0 +1,13 @@
+<div ng-repeat="track in recievedTracksByAuthor"
+    class="thumbnail music-list-item">
+    <p>{{track.author}}</p>
+    <!-- <li> -->
+      <img ng-src="{{track.media.image}}" alt="" />
+      <h2>{{track.name}}</h2>
+      <p>{{track.snippet}}</p>
+      <audio controls>
+        <source ng-src="{{track.media.result}}" type="audio/mpeg"> 
+      </audio>
+    <!-- </li> -->
+    <hr>
+</div>

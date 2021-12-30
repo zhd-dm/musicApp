@@ -5,10 +5,8 @@ angular.
   module('navBar').
   component('navBar', {
     templateUrl: 'nav-bar/nav-bar.template.html',
-    controller: ['Music', 'MusicUserService', '$scope',
-      function MusicListController(Music, MusicUserService, $scope) {
-        this.musics = Music.query();
-        this.orderProp = 'age';
+    controller: ['$scope',
+      function MusicListController($scope) {
       }
     ]
   });

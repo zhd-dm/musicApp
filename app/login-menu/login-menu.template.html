@@ -1,7 +1,17 @@
-<form action=""></form>
-    <input type="text" placeholder="Login" id="login" />
-    <input type="password" placeholder="Password" id="password" />
-    <br>
-    <button class="btn btn-success" ng-click="logIn()"> Login </button>
-    <!-- <button class="btn btn-primary" ng-click="registrationMenu()"> Registration </button> -->
-</form>
+<h1>Log In</h1>
+<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label>Login</label>
+            <input type="text" id="login" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="password" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success" ng-click="logIn()"> Log In </button>
+            <input type="reset" class="btn btn-danger" value="Reset form" />
+        </div>
+    </form>
+</div>

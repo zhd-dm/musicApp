@@ -5,13 +5,31 @@ angular.
   config(['$routeProvider', '$sceProvider', 
     function config($routeProvider) {
       $routeProvider.
+        when('/home', {
+          template: '<home-page></home-page>'
+        }).
         when('/musics', {
           template: '<music-list></music-list>'
         }).
         when('/musics/:trackId', {
-          template: '<music-detail customAttribute={{track._id}}></music-detail>'
+          template: '<music-detail></music-detail>'
         }).
-        otherwise('/musics');
+        when('/user/registration', {
+          template: '<registration-menu></registration-menu>'
+        }).
+        when('/user/login', {
+          template: '<login-menu></login-menu>'
+        }).
+        when('/upload', {
+          template: '<upload-menu></upload-menu>'
+        }).
+        when('/authors', {
+          template: '<author-list></author-list>'
+        }).
+        when('/authors/:authorName', {
+          template: '<author-detail></author-detail>'
+        }).
+        otherwise('/home');
     }
   ])
   .config(function($sceProvider) {

@@ -18,6 +18,11 @@ angular.
                     .get(`http://localhost:1111/api/tracks/${id}`);
             };
 
+            function getTracksByAuthor(author) {
+                return $http
+                    .get(`http://localhost:1111/api/tracks/users/${author}`);
+            };
+
             function saveTrack(uploadTrack) {
                 // uploadedTracks[track.id] = {
                 //     name: track.name,
@@ -28,17 +33,12 @@ angular.
                     .then(() => console.log("Success"), () => console.log("Decline"));
             };
 
-            function updateTrackData(updatedTrack, id) {
-                $http  
-                    .patch(`http://localhost:1111/api/tracks/edit/${id}`, updatedTrack)
-                    .then(() => console.log("Success"), () => console.log("Decline"));
-            }
-
             return {
                 saveTrack: saveTrack,
                 getTracks: getTracks,
                 getTrackById: getTrackById,
-                updateTrackData: updateTrackData
+                // updateTrackData: updateTrackData,
+                getTracksByAuthor: getTracksByAuthor
             };
         }
     ]);

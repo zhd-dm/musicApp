@@ -1,0 +1,38 @@
+<ul class="musics" ng-if="!$scope.authors">
+  <li ng-repeat="author in recievedAuthors" class="thumbnail"> 
+    <div class="row">
+      <div class="col-md-5">
+        <h2>{{author.name}}</h2>
+        <a ng-href="#!/authors/{{author.name}}" class="thumb">
+          <img ng-src="{{author.avatar}}" alt="{{author.name}}" />
+        </a>
+      </div>
+      <!-- <div class="col-md-5">
+        <li ng-repeat="track in recievedTracks">
+          <a ng-href="#!/musics/{{track._id}}" class="thumb">{{track.name}}</a>
+        </li>
+      </div> -->
+    </div>
+    <hr>
+  </li>
+</ul>
+
+<!-- <ul class="musics" ng-if="!$scope.tracks">
+  <li ng-repeat="track in recievedTracks" class="thumbnail"> 
+    <div class="row">
+      <div class="col-md-5">
+        <a ng-href="#!/musics/{{track._id}}" class="thumb">
+          <img ng-src="{{track.media.image}}" alt="{{track.name}}" />
+        </a>
+      </div>
+      <div class="col-md-5">
+        <a ng-href="#!/authors/{{track.author}}">{{track.author}}</a> - <a ng-href="#!/musics/{{track._id}}">{{track.name}}</a>
+        <p>{{track.media.snippet}}</p>
+        <audio controls>
+          <source ng-src="{{track.media.result}}" type="audio/mpeg"> 
+        </audio>
+      </div>
+    </div>
+    <hr>
+  </li>
+</ul> -->

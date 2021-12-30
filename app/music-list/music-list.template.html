@@ -1,114 +1,19 @@
-<!-- <nav-bar></nav-bar> -->
-<div class="container-fluid">
-  <div class="row">
-
-    <div class="col-md-4">
-      <div class="loginMenu">
-        <login-menu></login-menu>
+<ul class="musics" ng-if="!$scope.tracks">
+  <li ng-repeat="track in recievedTracks" class="thumbnail"> 
+    <div class="row">
+      <div class="col-md-5">
+        <a ng-href="#!/musics/{{track._id}}" class="thumb">
+          <img ng-src="{{track.media.image}}" alt="{{track.name}}" />
+        </a>
+      </div>
+      <div class="col-md-5">
+        <a ng-href="#!/authors/{{track.author}}">{{track.author}}</a> - <a ng-href="#!/musics/{{track._id}}">{{track.name}}</a>
+        <p>{{track.media.snippet}}</p>
+        <audio controls>
+          <source ng-src="{{track.media.result}}" type="audio/mpeg"> 
+        </audio>
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="loginMenu"> 
-        <upload-menu></upload-menu>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="loginMenu"> 
-        <registration-menu></registration-menu>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="row">
-
-    <div class="col-md-4">
-      <div class="loginMenu">
-        <!-- <edit-page></edit-page> -->
-      </div>
-    </div>
-    
-    <div class="col-md-4"> 
-      <!-- <upload-menu></upload-menu> -->
-    </div>
-
-    <div class="col-md-4"> 
-      <!-- <registration-menu></registration-menu> -->
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="spinner-border" role="status" ng-if="!$scope.tracks">
-      <span class="sr-only">Loading...</span>
-    </div>
-    <ul class="musics" ng-if="!$scope.tracks">
-      <li ng-repeat="track in recievedTracks"
-          class="thumbnail music-list-item"> 
-        <div class="row">
-  
-          <div class="col-md-3">
-            <a href="#!/musics/{{track._id}}" ng-init="trackId='id' + track._id" class="thumb">
-              <img ng-src="{{track.media.image}}" alt="{{track.name}}" />
-            </a>
-          </div>
-
-          <div class="col-md-5">
-            <a href="#!/musics/{{track.author}}">{{track.author}}</a> - <a ng-click="getTrackId(track._id)">{{track.name}}</a>
-            <p>{{track.media.snippet}}</p>
-            <audio controls>
-              <source ng-src="{{track.media.result}}" type="audio/mpeg"> 
-            </audio>
-          </div>
-
-        </div>
-      </li>
-    </ul>
-
-  </div>
-</div>
-  
- <!-- <div class="row">
-
-   <div class="col-md-6">
-      Sidebar content
-      <p>
-        Search:
-        <input ng-model="$ctrl.query" />
-      </p>
-
-      <p>
-        Sort by:
-        <select ng-model="$ctrl.orderProp">
-          <option value="name">Alphabetical</option>
-          <option value="age">Newest</option>
-        </select>
-      </p>
-  </div> -->
-
-    <!-- <div class="col-md-6">
-      Body content
-
-      <ul class="musics">
-        
-        <li ng-repeat="music in $ctrl.musics | filter:$ctrl.query | orderBy:$ctrl.orderProp"
-        class="thumbnail music-list-item">
-
-            <div class="row">
-              
-              <div class="col-md-2">
-                <a href="#!/musics/{{music.id}}" class="thumb">
-                  <img ng-src="{{music.imageUrl}}" alt="{{music.name}}" />
-                </a>
-              </div>
-              
-              <div class="col-md-5">
-                <a href="#!/musics/{{music.id}}">{{music.name}}</a>
-                <p>{{music.snippet}}</p>
-              </div>
-            </div>
-        </li>
-      </ul>
-    </div> 
-  </div> -->
+    <hr>
+  </li>
+</ul>

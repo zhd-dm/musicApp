@@ -1,13 +1,12 @@
-body {
+ body {
   padding: 20px;
 }
-
+/*
 h1 {
   border-bottom: 1px solid gray;
   margin-top: 0;
 }
 
-/* View: music list */
 .musics {
   list-style: none;
 }
@@ -22,11 +21,9 @@ h1 {
   float: left;
   height: 100px;
   margin: 1rem;
-  /* padding: 1rem; */
   width: 100px;
 }
 
-/* View: music detail */
 .music {
   background-color: white;
   display: none;
@@ -43,12 +40,10 @@ h1 {
 }
 
 .music-images {
-  background-color: white;
   float: left;
   height: 120px;
   overflow: hidden;
   position: relative;
-  width: 150px;
 }
 
 .music-thumbs {
@@ -90,12 +85,4 @@ h1 {
 .specs > li > span {
   font-size: 1.2em;
   font-weight: bold;
-}
-
-/* .loginMenu {
-  text-align: center;
-  padding: 5px;
-  background-color: rgb(101, 211, 214);
-  border-radius: 30px;
-  border: 2px solid rgb(3, 162, 146);
 } */

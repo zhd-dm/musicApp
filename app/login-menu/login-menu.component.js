@@ -4,11 +4,19 @@ angular.
   module('loginMenu').
   component('loginMenu', {
     templateUrl: 'login-menu/login-menu.template.html',
-    controller: ['$scope', '$http', 'MusicUserService', 
-      function MusicUserComponent($scope, $http, MusicUserService) {
-        // console.log("from function hello")
+    controller: ['$scope', '$http', 'User',
+      function MusicUserLogInComponent($scope, $http, User) {
         $scope.logIn = function() {
-          this.user = MusicUserService.logIn();
-        };
-    }]
+          var currentUser = {
+            login: '',
+            password: ''
+          }
+          var loginInput = document.getElementById('login').value;
+          var passwordInput = document.getElementById('password').value;
+          currentUser.login = loginInput;
+          currentUser.password = passwordInput;
+          User.logIn(currentUser);
+        }
+      }
+    ]
   });

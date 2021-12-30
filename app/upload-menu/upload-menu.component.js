@@ -6,8 +6,6 @@ angular.
     templateUrl: 'upload-menu/upload-menu.template.html',
     controller: ['$scope', '$http', 'Track',
     function UploadDetailComponent($scope, $http, Track) {
-      var self = this;
-
       $scope.upload = function() {
         var uploadTrack = {
           name: '',             // trackName
@@ -22,7 +20,7 @@ angular.
 
         var trackResult = document.getElementById('trackResult').files[0];
         var trackName = document.getElementById('trackName').value;
-        var trackAuthor = '@login';
+        var trackAuthor = 'Demyan Zhdanov';
         var trackSize;
         var trackImage = '@defaultAvatar';
         var trackSnippet = document.getElementById('trackSnippet').value; 
@@ -48,7 +46,8 @@ angular.
 
         } else {
           console.log("Choose file!");
-        };;
+        };
       };
-    }]
+    }
+  ]
   });

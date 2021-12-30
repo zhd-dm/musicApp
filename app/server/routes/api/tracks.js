@@ -11,18 +11,10 @@ router.get('/', controller.trackFind);
 // @route POST /api/tracks
 router.post('/', controller.trackUpload);
 
-///////////////////////////////// /api/tracks/trackById
 // @route GET /api/tracks/trackById
 router.get('/:trackId', controller.trackById);
 
+// @route GET /api/tracks/users/currentAuthor
+router.get('/users/:currentAuthor', controller.currentAuthor);
+
 module.exports = router;
-
-
-
-// name: { type: String, required: true },             // .name     = ??
-// author: { type: String },                           // .author   = user.name
-// size: { type: Number },                             // .size     = e.total
-// media: {
-//     result: { type: String, required: true },       // ..result  = e.target.result
-//     image: { type: String },                        // ..image   = ??
-//     snippet: { type: String },
