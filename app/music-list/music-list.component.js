@@ -5,8 +5,8 @@ angular.
   module('musicList').
   component('musicList', {
     templateUrl: 'music-list/music-list.template.html',
-    controller: ['Music', '$scope', 'Track', '$location',
-      function MusicListController(Music, $scope, Track, $location) {
+    controller: ['$scope', 'Track',
+      function MusicListController($scope, Track) {
         _init();
         function _init() {
           Track.getTracks()
@@ -15,11 +15,6 @@ angular.
             console.log($scope.recievedTracks);
           })
         };
-
-        // $scope.getTrackId = function(id) {
-        //   console.log(id);
-        //   $location.url(`/musics/${id}`)
-        // }
       }
     ]
   });

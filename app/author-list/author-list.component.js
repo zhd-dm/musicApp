@@ -5,8 +5,8 @@ angular.
   module('authorList').
   component('authorList', {
     templateUrl: 'author-list/author-list.template.html',
-    controller: ['$scope', 'User', 'Track',
-      function AuthorListController($scope, User, Track) {
+    controller: ['$scope', 'User',
+      function AuthorListController($scope, User) {
         _init();
         function _init() {
           User.getAuthors()
@@ -14,11 +14,11 @@ angular.
             $scope.recievedAuthors = response.data;
             console.log($scope.recievedAuthors)
           });
-          Track.getTracks()
-          .then(function(response) {
-            $scope.recievedTracks = response.data;
-            console.log($scope.recievedTracks);
-          })
+          // Track.getTracks()
+          // .then(function(response) {
+          //   $scope.recievedTracks = response.data;
+          //   console.log($scope.recievedTracks);
+          // })
         };
       }
     ]

@@ -34,7 +34,6 @@
     "protractor": "^5.4.4"
   },
   "scripts": {
-    "111111": "nodemon /server/index.js ",
     "postinstall": "npm run copy-libs",
     "update-deps": "npm update",
     "postupdate-deps": "npm run copy-libs",

@@ -4,8 +4,8 @@ angular.
   module('loginMenu').
   component('loginMenu', {
     templateUrl: 'login-menu/login-menu.template.html',
-    controller: ['$scope', '$http', 'User',
-      function MusicUserLogInComponent($scope, $http, User) {
+    controller: ['$scope', 'User',
+      function MusicUserLogInComponent($scope, User) {
         $scope.logIn = function() {
           var currentUser = {
             login: '',

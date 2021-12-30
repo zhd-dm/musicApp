@@ -4,8 +4,8 @@ angular.
   module('uploadMenu').
   component('uploadMenu', {
     templateUrl: 'upload-menu/upload-menu.template.html',
-    controller: ['$scope', '$http', 'Track',
-    function UploadDetailComponent($scope, $http, Track) {
+    controller: ['$scope', 'Track',
+    function UploadDetailComponent($scope, Track) {
       $scope.upload = function() {
         var uploadTrack = {
           name: '',             // trackName

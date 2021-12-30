@@ -7,6 +7,7 @@ angular.
     templateUrl: 'nav-bar/nav-bar.template.html',
     controller: ['$scope',
       function MusicListController($scope) {
+        
       }
     ]
   });

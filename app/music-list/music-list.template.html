@@ -1,12 +1,12 @@
 <ul class="musics" ng-if="!$scope.tracks">
   <li ng-repeat="track in recievedTracks" class="thumbnail"> 
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-4">
         <a ng-href="#!/musics/{{track._id}}" class="thumb">
           <img ng-src="{{track.media.image}}" alt="{{track.name}}" />
         </a>
       </div>
-      <div class="col-md-5">
+      <div class="col-md">
         <a ng-href="#!/authors/{{track.author}}">{{track.author}}</a> - <a ng-href="#!/musics/{{track._id}}">{{track.name}}</a>
         <p>{{track.media.snippet}}</p>
         <audio controls>
@@ -16,4 +16,3 @@
     </div>
     <hr>
   </li>
-</ul>

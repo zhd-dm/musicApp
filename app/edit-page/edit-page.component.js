@@ -5,8 +5,8 @@ angular.
   module('editPage').
   component('editPage', {
     templateUrl: 'edit-page/edit-page.template.html',
-    controller: ['$scope', '$http', 'Track',
-    function UpdateDetailComponent($scope, $http, Track) {
+    controller: ['$scope', 'Track',
+    function UpdateDetailComponent($scope, Track) {
       var self = this;
 
       $scope.updateTrackData = function() {
@@ -29,13 +29,6 @@ angular.
         var trackSnippet = document.getElementById('trackSnippet').value; 
 
         var fileReader = new FileReader();
-
-        // function hz(trackImage, trackName, trackSnippet) {
-        //   if (trackImage == null) return 
-        //   if (trackName == null) return 
-        //   if (trackSnippet == null) return 
-        // }
-
 
         if(trackImage != null || trackName != null || trackSnippet != null) {
           fileReader.readAsDataURL(trackImage);
