@@ -59,7 +59,7 @@ angular.
                 } else {
                     return $http
                             .post("http://localhost:1111/api/auth/register", currentUser)
-                            .then(() => console.log("Success"), () => console.log(Decline))
+                            .then(() => console.log("Success"), () => console.log("Decline"))
                 }
             }
 
